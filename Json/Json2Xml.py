@@ -1,6 +1,7 @@
 import json
 import xml.etree.ElementTree as ET
 import os
+from xml.dom import minidom
 
 def json_to_xml(json_obj, root_tag='root'):
     def dict_to_xml(tag, d):
@@ -20,7 +21,10 @@ def json_to_xml(json_obj, root_tag='root'):
         return elem
 
     root = dict_to_xml(root_tag, json_obj)
-    return ET.tostring(root, encoding='unicode')
+    # Convert XML to a string and prettify it
+    xml_str = ET.tostring(root, encoding='unicode')
+    pretty_xml_str = minidom.parseString(xml_str).toprettyxml(indent="    ")
+    return pretty_xml_str
 
 def main():
     # Prompt user for the JSON file path
