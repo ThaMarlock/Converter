@@ -22,25 +22,22 @@ def json_to_xml(json_obj, root_tag='root'):
     return ET.tostring(root, encoding='unicode')
 
 def main():
-    # Example JSON data
-    json_data = {
-        "name": "John",
-        "age": 30,
-        "children": [
-            {"name": "Alice", "age": 10},
-            {"name": "Bob", "age": 5}
-        ],
-        "address": {
-            "street": "123 Elm St",
-            "city": "Somewhere"
-        }
-    }
+    # Define file paths
+    json_file_path = 'input.json'  # Input JSON file path
+    xml_file_path = 'output.xml'   # Output XML file path
+
+    # Read JSON data from the input file
+    with open(json_file_path, 'r') as json_file:
+        json_data = json.load(json_file)
     
     # Convert JSON to XML
-    xml_data = json_to_xml(json_data, 'Person')
+    xml_data = json_to_xml(json_data, 'Root')
     
-    # Print XML data
-    print(xml_data)
+    # Write XML data to the output file
+    with open(xml_file_path, 'w') as xml_file:
+        xml_file.write(xml_data)
+    
+    print(f"JSON data from {json_file_path} has been converted to XML and saved to {xml_file_path}")
 
 if __name__ == "__main__":
     main()
