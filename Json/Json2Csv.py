@@ -7,15 +7,22 @@ def json_to_csv(json_file_path):
     with open(json_file_path, 'r') as json_file:
         data = json.load(json_file)
 
-    # Check if the JSON data is a list of dictionaries
-    if not isinstance(data, list) or not all(isinstance(item, dict) for item in data):
-        raise ValueError("JSON data should be a list of dictionaries")
+    # Determine if data is a list of dictionaries
+    if isinstance(data, list):
+        # If the list is not empty and contains dictionaries
+        if data and isinstance(data[0], dict):
+            headers = data[0].keys()
+        else:
+            raise ValueError("The JSON list is empty or does not contain dictionaries.")
+    elif isinstance(data, dict):
+        # Handle the case where the JSON data is a single dictionary
+        headers = data.keys()
+        data = [data]  # Convert to list of one dictionary
+    else:
+        raise ValueError("JSON data should be either a list of dictionaries or a single dictionary.")
 
     # Determine the CSV file path
     csv_file_path = os.path.splitext(json_file_path)[0] + '.csv'
-
-    # Get the headers from the keys of the first dictionary
-    headers = data[0].keys()
 
     # Write the CSV data
     with open(csv_file_path, 'w', newline='', encoding='utf-8') as csv_file:
