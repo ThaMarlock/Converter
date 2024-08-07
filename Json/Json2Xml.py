@@ -26,12 +26,14 @@ def main():
     # Prompt user for the JSON file path
     json_file_path = input("Enter the path to the JSON file to be converted: ")
 
-    # Generate the XML file path by replacing the JSON extension with XML
+    # Check if the file has a .json extension
     if not json_file_path.lower().endswith('.json'):
         print("Error: The file does not have a .json extension.")
         return
 
-    xml_file_path = os.path.splitext(json_file_path)[0] + '.xml'
+    # Generate the XML file path with the same base name
+    base_name = os.path.splitext(json_file_path)[0]
+    xml_file_path = base_name + '.xml'
 
     try:
         # Read JSON data from the input file
