@@ -1,5 +1,6 @@
 import json
 import xml.etree.ElementTree as ET
+import os
 
 def json_to_xml(json_obj, root_tag='root'):
     def dict_to_xml(tag, d):
@@ -22,9 +23,15 @@ def json_to_xml(json_obj, root_tag='root'):
     return ET.tostring(root, encoding='unicode')
 
 def main():
-    # Prompt user for file paths
+    # Prompt user for the JSON file path
     json_file_path = input("Enter the path to the JSON file to be converted: ")
-    xml_file_path = input("Enter the path to save the converted XML file: ")
+
+    # Generate the XML file path by replacing the JSON extension with XML
+    if not json_file_path.lower().endswith('.json'):
+        print("Error: The file does not have a .json extension.")
+        return
+
+    xml_file_path = os.path.splitext(json_file_path)[0] + '.xml'
 
     try:
         # Read JSON data from the input file
