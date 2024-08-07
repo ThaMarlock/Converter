@@ -22,22 +22,30 @@ def json_to_xml(json_obj, root_tag='root'):
     return ET.tostring(root, encoding='unicode')
 
 def main():
-    # Define file paths
-    json_file_path = 'input.json'  # Input JSON file path
-    xml_file_path = 'output.xml'   # Output XML file path
+    # Prompt user for file paths
+    json_file_path = input("Enter the path to the JSON file to be converted: ")
+    xml_file_path = input("Enter the path to save the converted XML file: ")
 
-    # Read JSON data from the input file
-    with open(json_file_path, 'r') as json_file:
-        json_data = json.load(json_file)
+    try:
+        # Read JSON data from the input file
+        with open(json_file_path, 'r') as json_file:
+            json_data = json.load(json_file)
+        
+        # Convert JSON to XML
+        xml_data = json_to_xml(json_data, 'Root')
+        
+        # Write XML data to the output file
+        with open(xml_file_path, 'w') as xml_file:
+            xml_file.write(xml_data)
+        
+        print(f"JSON data from {json_file_path} has been converted to XML and saved to {xml_file_path}")
     
-    # Convert JSON to XML
-    xml_data = json_to_xml(json_data, 'Root')
-    
-    # Write XML data to the output file
-    with open(xml_file_path, 'w') as xml_file:
-        xml_file.write(xml_data)
-    
-    print(f"JSON data from {json_file_path} has been converted to XML and saved to {xml_file_path}")
+    except FileNotFoundError:
+        print(f"Error: The file {json_file_path} does not exist.")
+    except json.JSONDecodeError:
+        print(f"Error: The file {json_file_path} does not contain valid JSON.")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
 
 if __name__ == "__main__":
     main()
