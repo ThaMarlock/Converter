@@ -21,6 +21,9 @@ def convert_json_to_yaml(input_path):
     print(f"Converted {input_path} to {output_path}")
 
 if __name__ == "__main__":
-    # Example usage: Replace 'input.json' with the path to your JSON file
-    input_file = 'input.json'
-    convert_json_to_yaml(input_file)
+    # Prompt the user for the JSON file path
+    input_file = input("Enter the path to the JSON file: ")
+    try:
+        convert_json_to_yaml(input_file)
+    except Exception as e:
+        print(f"An error occurred: {e}")
