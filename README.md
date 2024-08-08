@@ -13,6 +13,12 @@ The converting scripts in this folder converting json into the specific file for
 
 ### Usage
 
+Start the script with the following command:
+
+```
+python3 .\Json\Json2Csv.py
+```
+
 ### Result
 
 ## Json2Toml
