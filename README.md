@@ -25,6 +25,8 @@ python3 .\Json\Json2Csv.py
 
 ### Usage
 
+Start the script with the following command:
+
 ### Result
 
 ## Json2Xml
