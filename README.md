@@ -27,6 +27,10 @@ python3 .\Json\Json2Csv.py
 
 Start the script with the following command:
 
+```cmd
+python3 .\Json\Json2Toml.py
+```
+
 ### Result
 
 ## Json2Xml
