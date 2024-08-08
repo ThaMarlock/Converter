@@ -39,6 +39,10 @@ python3 .\Json\Json2Toml.py
 
 Start the script with the following command:
 
+```cmd
+python3 .\Json\Json2Xml.py
+```
+
 ### Result
 
 ## Json2Yaml
