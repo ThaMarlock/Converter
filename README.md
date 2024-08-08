@@ -6,6 +6,7 @@ Folder name is the source language.
 
 ## Json
 
+The converting scripts in this folder converting json into the specific file format.
 
 
 # Packages
