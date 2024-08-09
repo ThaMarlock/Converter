@@ -62,3 +62,5 @@ python3 .\Json\Json2Yaml.py
 pip install pyyaml
 
 pip install toml
+
+pip install xmltodict
