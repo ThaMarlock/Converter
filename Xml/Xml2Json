@@ -1,7 +1,19 @@
 import xmltodict
 import json
+import os
 
-def convert_xml_to_json(xml_file_path, json_file_path):
+def convert_xml_to_json():
+    # Ask the user for the input XML file path
+    xml_file_path = input("Enter the path to the XML file: ").strip()
+
+    # Check if the file exists
+    if not os.path.isfile(xml_file_path):
+        print("The specified file does not exist. Please check the path and try again.")
+        return
+
+    # Determine the JSON file path
+    json_file_path = os.path.splitext(xml_file_path)[0] + '.json'
+
     # Read the XML file
     with open(xml_file_path, 'r') as xml_file:
         xml_content = xml_file.read()
@@ -19,6 +31,4 @@ def convert_xml_to_json(xml_file_path, json_file_path):
     print(f'XML has been converted to JSON and saved to {json_file_path}')
 
 if __name__ == "__main__":
-    xml_file_path = 'input.xml'  # Path to your XML file
-    json_file_path = 'output.json'  # Path where the JSON will be saved
-    convert_xml_to_json(xml_file_path, json_file_path)
+    convert_xml_to_json()
