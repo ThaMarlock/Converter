@@ -51,7 +51,7 @@ Start the script with the following command:
 python3 .\Json\Json2Xml.py
 ```
 
-### Result
+### Description
 
 ## Json2Yaml
 
