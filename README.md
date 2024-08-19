@@ -27,7 +27,7 @@ python3 .\Json\Json2Csv.py
 ---
 ## Json2Toml
 
-### Usage
+### Execute
 
 Start the script with the following command:
 
