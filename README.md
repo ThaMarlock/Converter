@@ -35,7 +35,9 @@ Start the script with the following command:
 python3 .\Json\Json2Toml.py
 ```
 
-### Result
+### Description
+
+### Usage
 
 ## Json2Xml
 
