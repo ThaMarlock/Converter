@@ -99,6 +99,10 @@ The converting scripts in this folder converting json into the specific file for
 
 ### Description
 
+This script is asking the user for the path to the file he wants to convert.
+
+After the file is converted the script closes automatically.
+
 ### Usage
 
 
