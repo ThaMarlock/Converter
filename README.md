@@ -141,6 +141,10 @@ After the file is converted the script closes automatically.
 
 ### Description
 
+This script is asking the user for the path to the file he wants to convert.
+
+After the file is converted the script closes automatically.
+
 ### Usage
 
 
