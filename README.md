@@ -21,6 +21,8 @@ python3 .\Json\Json2Csv.py
 
 ### Description
 
+This script is asking the user for the path to the file he wants to convert.
+
 ### Usage
 
 
