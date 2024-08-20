@@ -140,7 +140,7 @@ After the file is converted the script closes automatically.
 Start the script with the following command:
 
 ```cmd
-python3 .\Json\Json2Yaml.py
+python3 .\Json\Xml2Toml.py
 ```
 
 ### Description
