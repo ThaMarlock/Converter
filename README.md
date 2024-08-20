@@ -99,6 +99,10 @@ The converting scripts in this folder converting json into the specific file for
 
 Start the script with the following command:
 
+```cmd
+python3 .\Json\Json2Yaml.py
+```
+
 ### Description
 
 This script is asking the user for the path to the file he wants to convert.
