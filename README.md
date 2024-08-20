@@ -129,6 +129,8 @@ After the file is converted the script closes automatically.
 
 ### Execute
 
+Start the script with the following command:
+
 ### Description
 
 This script is asking the user for the path to the file he wants to convert.
