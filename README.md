@@ -97,6 +97,8 @@ The converting scripts in this folder converting json into the specific file for
 
 ### Execute
 
+Start the script with the following command:
+
 ### Description
 
 This script is asking the user for the path to the file he wants to convert.
